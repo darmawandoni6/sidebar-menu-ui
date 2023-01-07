@@ -51,6 +51,37 @@ import Sample from './Sample'
     </BrowserRouter>
 ```
 
+```js
+    const menu = [
+                    {
+                        heading: 'Core',
+                    },
+                    {
+                        icon: <i className="fas fa-tachometer-alt"></i>,
+                        name: 'Dashboard',
+                        href: '/dashboard',
+                    },
+                 ]
+    for (let index = 1; index < 20; index++) {
+      if (index % 4 === 0) x.push({ heading: `Layout Core ${index / 4}` })
+      menu.push({
+        icon: <i className="fas fa-columns"></i>,
+        name: `Layout ${index}`,
+        href: `/layout-${index}`,
+        subMenu: [
+          {
+            name: 'Menu 1',
+            href: '/menu-1',
+          },
+          {
+            name: 'Menu 2',
+            href: '/menu-2',
+          },
+        ],
+      })
+    }
+```
+
 ```jsx
 import { SidebarContainer, SidebarProvider, useSidebar } from 'sidebar-menu-ui'
 import 'sidebar-menu-ui/dist/scss/main.scss'
@@ -58,7 +89,7 @@ import 'sidebar-menu-ui/dist/scss/main.scss'
     <SidebarProvider>
         <SidebarContainer
             title={{ name: 'hello world', href: '/dashboard' }}
-            menu={dummy}
+            menu={menu}
             navbar
             navbarRight={<>lorem ipsum</>}
         >
@@ -104,6 +135,38 @@ $padding-content: 1.5rem !default;
 
 ## API
 
+### Menu
+<table>
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Example Code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Heading</td>
+            <td> 
+                <code> { heading: 'Core' } </code>
+            </td>
+        </tr>
+        <tr>
+            <td>Single Menu</td>
+            <td> 
+                <code> { <br/> &ensp; icon: /** font awesome */,<br/>  &ensp; name: 'Dashboard',<br/> &ensp; href: '/dashboard' <br/>} </code>
+            </td>
+        </tr>
+        <tr>
+            <td>Sub Menu</td>
+            <td> 
+                <code> { <br/> &ensp; icon: /** font awesome */,<br/>  &ensp; name: 'Layout 2',<br/> &ensp; href: '/layout-2', <br/> &ensp; subMenu: [<br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; { <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; name: 'Menu 1', <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; href: '/menu-1', <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; }, <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; { <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; name: 'Menu 1', <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; href: '/menu-1', <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; },<br/>  &ensp; ]
+                </code>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+### Component 
 <Table>
     <thead>
         <tr>
@@ -116,27 +179,41 @@ $padding-content: 1.5rem !default;
     </thead>
     <tbody>
         <tr>
+            <td>SidebarProvider</td>
+            <td></td>
+            <td></td>
+            <td>Provider container sidebar</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>useSidebar</td>
+            <td></td>
+            <td>Function</td>
+            <td>custom hook funtion for Toggle show or hide sidebar</td>
+            <td></td>
+        </tr>
+        <tr>
             <td rowspan=4>SidebarContainer</td>
             <td>title</td>
-            <td>Object</td>
+            <td><code>Object</code></td>
             <td>title project and routing</td>
             <td>null</td>
         </tr>
         <tr>
             <td>menu</td>
-            <td>Array</td>
+            <td><code>Array</code</td>
             <td>Mapping menu and Sub Menu</td>
-            <td>[]</td>
+            <td>[ ]</td>
         </tr>
         <tr>
             <td>navbar</td>
-            <td>Boolean</td>
+            <td><code>Boolean<code></td>
             <td>Navbar header</td>
             <td>false</td>
         </tr>
         <tr>
             <td>navbarRight</td>
-            <td>ReactNode</td>
+            <td><code>ReactNode</code></td>
             <td>custom navbar right side component</td>
             <td>null</td>
         </tr>
