@@ -4,7 +4,7 @@ Free simple UI sidebar ready to use.
 
 ## Screenshot
 
-![react-pro-sidebar]()
+![react-pro-sidebar](https://demo-sidebar-menu-ui.netlify.app/Screen%20Shot%202023-01-07%20at%2015.26.56.png)
 
 ## Installation
 
@@ -23,7 +23,7 @@ npm i sidebar-menu-ui
 
 ## Usage
 
-1. Copas Font Awesome in index.html
+1. copas Font Awesome in index.html
 
 ```html
 ....
