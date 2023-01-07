@@ -1,13 +1,12 @@
 {
-  "name": "test-sidebar-menu",
-  "version": "1.0.13",
+  "name": "sidebar-menu-ui",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "repository": "https://github.com/darmawandoni6/sidebar-menu.git",
   "author": "darmawandoni6 <darmawandoni6@gmail.com>",
   "license": "MIT",
   "private": false,
-  
   "scripts": {
     "start": "react-scripts start",
     "build": "rm -rf dist && rollup -c --bundleConfigAsCjs",

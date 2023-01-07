@@ -9,11 +9,12 @@ import { ContextSidebar } from '../SidebarProvider'
 const SidebarContainer = ({ children, title, menu, navbar, navbarRight }) => {
   const { vProvide, setProvider } = React.useContext(ContextSidebar)
 
+  const toggle = React.useCallback(() => {
+    setProvider()
+  }, [])
+
   return (
-    <div
-      className={cx(style.main, 'main-sidebar-container')}
-      style={navbar ? {} : { paddingTop: 0 }}
-    >
+    <div className={cx(style.main, 'main-sidebar-container')} style={navbar ? {} : { paddingTop: 0 }}>
       {navbar && (
         <NavbarHeader
           title={title}
@@ -27,11 +28,12 @@ const SidebarContainer = ({ children, title, menu, navbar, navbarRight }) => {
         menu={menu}
         footerName="Start Bootstrap"
         showSidebar={vProvide.show}
-        toggle={() => setProvider((prev) => ({ ...prev, show: !prev.show }))}
+        toggle={toggle}
       />
-      <section className={cx(style.content, !vProvide.show ? 'full-content' : '')}>
-        {children}
-      </section>
+      <section className={cx(style.content, !vProvide.show ? 'full-content' : '')}>{children}</section>
+      <div id="back-drop" className={style.backDrop} onClick={toggle}>
+        {' '}
+      </div>
     </div>
   )
 }

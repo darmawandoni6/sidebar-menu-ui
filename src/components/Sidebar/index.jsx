@@ -6,16 +6,7 @@ import SingleMenu from './component/SingleMenu'
 import cx from 'classnames'
 import { Link, useLocation } from 'react-router-dom'
 
-const Sidebar = ({
-  menu = [],
-  footerName,
-  showSidebar,
-  toggle,
-  navbar,
-  styles = {},
-  title,
-  header,
-}) => {
+const Sidebar = ({ menu = [], footerName, showSidebar, toggle, navbar, styles = {}, title, header }) => {
   const [openSub, setOpenSub] = React.useState(-1)
   const sidebar = React.useId()
   const { pathname } = useLocation()
@@ -30,15 +21,6 @@ const Sidebar = ({
     },
     [openSub],
   )
-  const handleMain = React.useCallback((e) => {
-    var screen = window.matchMedia('(max-width: 768px)')
-    if (screen.matches) {
-      const element = document.getElementById(sidebar)
-      if (element.id === e.target.id) {
-        toggle()
-      }
-    }
-  }, [])
 
   const handleScreenMobile = useCallback(() => {
     var screen = window.matchMedia('(max-width: 576px)')
@@ -66,9 +48,8 @@ const Sidebar = ({
   return (
     <div
       id={sidebar}
-      className={cx(style.main, showSidebar ? 'sidebar-hide' : style.show, 'sidebar-container')}
+      className={cx(style.main, !showSidebar ? 'sidebar-hide' : '', 'sidebar-container')}
       style={{ ...custom, ...styles }}
-      onClick={handleMain}
     >
       <aside className={!showSidebar ? 'aside-hide' : ''}>
         {header && (
@@ -89,10 +70,7 @@ const Sidebar = ({
                 )
               if (item.subMenu) {
                 return (
-                  <li
-                    key={i}
-                    className={cx(style.subMenu, activeMenu(item.href) ? 'menu-active' : '')}
-                  >
+                  <li key={i} className={cx(style.subMenu, activeMenu(item.href) ? 'menu-active' : '')}>
                     <SubMenu
                       idx={i}
                       name={item.name}
@@ -108,12 +86,7 @@ const Sidebar = ({
               }
               return (
                 <li key={i} className={activeMenu(item.href) ? 'menu-active' : ''}>
-                  <SingleMenu
-                    name={item.name}
-                    icon={item.icon}
-                    href={item.href}
-                    sidebar={handleScreenMobile}
-                  />
+                  <SingleMenu name={item.name} icon={item.icon} href={item.href} sidebar={handleScreenMobile} />
                 </li>
               )
             })}

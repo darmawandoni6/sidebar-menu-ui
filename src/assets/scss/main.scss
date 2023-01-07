@@ -85,13 +85,6 @@
     }
   }
   .sidebar-container {
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    &.sidebar-hide {
-      opacity: 0;
-      transform: none;
-    }
     aside {
       width: $sidebar-width;
       background-color: $background-color-sidebar;

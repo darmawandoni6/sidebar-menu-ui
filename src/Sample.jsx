@@ -25,9 +25,9 @@ const Test = () => {
       <h1>Location : {pathname}</h1>
       <button onClick={handleClick}>toogle</button>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, dolorem odit nemo
-        aperiam soluta facilis molestias sit. Voluptatum magni, ipsam quod ex similique voluptate!
-        Laboriosam accusamus asperiores accusantium inventore quasi.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, dolorem odit nemo aperiam soluta facilis
+        molestias sit. Voluptatum magni, ipsam quod ex similique voluptate! Laboriosam accusamus asperiores accusantium
+        inventore quasi.
       </p>
     </>
   )
@@ -63,7 +63,7 @@ const Sample = () => {
       <SidebarContainer
         title={{ name: 'hello world', href: '/dashboard' }}
         menu={dummy}
-        // navbar
+        navbar
         navbarRight={<>lorem ipsum</>}
       >
         <Routes>
