@@ -133,40 +133,43 @@ $padding-content: 1.5rem !default;
 
 ```
 
+
+
+## Example Menu
+
+### Heading
+```js
+{
+    heading: 'Core',
+},
+```
+### Single Menu
+```js
+{
+    icon: <i className="fas fa-tachometer-alt"></i>,
+    name: 'Dashboard',
+    href: '/dashboard',
+},
+```
+### Sub Menu
+```js
+{
+    icon: <i className="fas fa-columns"></i>,
+    name: 'Layout 1',
+    href: '/layout-2',
+    subMenu: [
+        {
+            name: 'Menu 1',
+            href: '/menu-1',
+        },
+        {
+            name: 'Menu 2',
+            href: '/menu-2',
+        },
+    ]
+},
+```
 ## API
-
-### Menu
-<table>
-    <thead>
-        <tr>
-            <th>Type</th>
-            <th>Example Code</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Heading</td>
-            <td> 
-                <code> { heading: 'Core' } </code>
-            </td>
-        </tr>
-        <tr>
-            <td>Single Menu</td>
-            <td> 
-                <code> { <br/> &ensp; icon: /** font awesome */,<br/>  &ensp; name: 'Dashboard',<br/> &ensp; href: '/dashboard' <br/>} </code>
-            </td>
-        </tr>
-        <tr>
-            <td>Sub Menu</td>
-            <td> 
-                <code> { <br/> &ensp; icon: /** font awesome */,<br/>  &ensp; name: 'Layout 2',<br/> &ensp; href: '/layout-2', <br/> &ensp; subMenu: [<br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; { <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; name: 'Menu 1', <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; href: '/menu-1', <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; }, <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; { <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; name: 'Menu 1', <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; href: '/menu-1', <br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; },<br/>  &ensp; ]
-                </code>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-### Component 
 <Table>
     <thead>
         <tr>
@@ -189,14 +192,14 @@ $padding-content: 1.5rem !default;
             <td>useSidebar</td>
             <td></td>
             <td>Function</td>
-            <td>custom hook funtion for Toggle show or hide sidebar</td>
+            <td>Custom hook funtion for Toggle show or hide sidebar</td>
             <td></td>
         </tr>
         <tr>
             <td rowspan=4>SidebarContainer</td>
             <td>title</td>
             <td><code>Object</code></td>
-            <td>title project and routing</td>
+            <td>Title project and routing</td>
             <td>null</td>
         </tr>
         <tr>
@@ -214,7 +217,7 @@ $padding-content: 1.5rem !default;
         <tr>
             <td>navbarRight</td>
             <td><code>ReactNode</code></td>
-            <td>custom navbar right side component</td>
+            <td>Custom navbar right side component</td>
             <td>null</td>
         </tr>
     </tbody>
