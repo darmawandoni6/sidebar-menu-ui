@@ -1,0 +1,123 @@
+@import './varible';
+* {
+  box-sizing: border-box;
+}
+.main-navbar {
+  background-color: $background-color-sidebar;
+  height: $header-height;
+  .left-nav {
+    a {
+      .title-nav {
+        width: $sidebar-width;
+        color: $font-color;
+      }
+    }
+    .btn-burger {
+      color: $font-color-sidebar;
+      &:hover {
+        color: $font-color;
+      }
+    }
+  }
+  .right-nav {
+    color: $font-color;
+  }
+}
+.main-sidebar-container {
+  padding-top: $header-height;
+  padding-left: $sidebar-width;
+  section {
+    padding: $padding-content;
+    &.full-content {
+      margin-left: -$sidebar-width;
+    }
+  }
+}
+.sidebar-container {
+  width: $sidebar-width;
+  color: $font-color-sidebar;
+  padding-top: $header-height;
+  &.sidebar-hide {
+    transform: translateX(-$sidebar-width);
+  }
+  aside {
+    background-color: $background-color-sidebar;
+    .title-sidebar {
+      height: $header-height;
+      a {
+        color: $font-color;
+        width: 100%;
+      }
+    }
+
+    .sidebar-content {
+      ul {
+        li {
+          &.menu-active {
+            border-left: 3px solid $font-color;
+          }
+          a {
+            color: $font-color-sidebar;
+          }
+          .menu-sidebar {
+            &:hover,
+            &.active-menu {
+              color: $font-color;
+            }
+          }
+        }
+      }
+    }
+    footer {
+      height: 70px;
+      background-color: $background-color-footer;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-sidebar-container {
+    padding-left: 0px;
+    section {
+      &.full-content {
+        margin-left: 0px;
+      }
+    }
+  }
+  .sidebar-container {
+    width: 100vw;
+    height: 100vh;
+    &.sidebar-hide {
+      opacity: 0;
+      transform: none;
+    }
+    aside {
+      width: $sidebar-width;
+      background-color: $background-color-sidebar;
+      &.aside-hide {
+        transform: translateX(-$sidebar-width);
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar-container {
+    width: 100vw;
+    background-color: transparent;
+    &.sidebar-hide {
+      transform: translateX(-100vw);
+    }
+    aside {
+      width: 100%;
+      .title {
+        a {
+          width: 100%;
+        }
+      }
+      &.sidebar-hide {
+        transform: translateX(-100vw);
+      }
+    }
+  }
+}

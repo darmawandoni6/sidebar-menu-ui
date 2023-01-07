@@ -1,0 +1,16 @@
+@import '../../assets/scss/varible';
+
+.main {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  .content {
+    min-height: 100%;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+}

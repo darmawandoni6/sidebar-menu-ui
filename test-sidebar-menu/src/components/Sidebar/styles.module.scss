@@ -1,0 +1,109 @@
+@import '../../assets/scss/varible';
+
+.main {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  z-index: 1;
+  box-sizing: border-box;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  aside {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid;
+      a {
+        text-align: center;
+        text-decoration: none;
+        font-weight: 400;
+        h1 {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 1.25rem;
+          margin-block: 0px;
+        }
+      }
+    }
+    .sidebar {
+      flex-grow: 1;
+      height: 100%;
+      overflow: auto;
+      ul {
+        list-style: none;
+        margin-block: 0px;
+        padding-inline: 0px;
+        li {
+          a {
+            text-decoration: none;
+          }
+          cursor: pointer;
+          .subMenu {
+            margin-left: 1.5rem;
+            -moz-transition: height 0.5s;
+            -ms-transition: height 0.5s;
+            -o-transition: height 0.5s;
+            -webkit-transition: height 0.5s;
+            transition: height 0.5s;
+            height: 0;
+            overflow: hidden;
+          }
+          &.heading {
+            padding: 1.75rem 1rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+          .menu {
+            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            .icon {
+              margin-right: 0.5rem;
+            }
+            .name {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            .sub {
+              display: inline-block;
+              margin-left: auto;
+              transition: 0.5s ease all;
+            }
+          }
+        }
+      }
+    }
+    footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.75rem;
+      .small {
+        font-size: 0.875em;
+        font-weight: 400;
+      }
+      p {
+        font-size: 1rem;
+        margin-block: 0px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+@import './responsive.module.scss';
