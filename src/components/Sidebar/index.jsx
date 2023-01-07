@@ -66,7 +66,7 @@ const Sidebar = ({
   return (
     <div
       id={sidebar}
-      className={cx(style.main, !showSidebar ? 'sidebar-hide' : style.show, 'sidebar-container')}
+      className={cx(style.main, showSidebar ? 'sidebar-hide' : style.show, 'sidebar-container')}
       style={{ ...custom, ...styles }}
       onClick={handleMain}
     >
