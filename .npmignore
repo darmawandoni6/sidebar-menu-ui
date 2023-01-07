@@ -4,3 +4,8 @@ demo
 yarn.lock
 package-lock.json
 rollup.config.mjs
+src/assets/main.scss
+src/App.js
+src/Dashboard.jsx
+src/index.js
+src/Sample.jsx

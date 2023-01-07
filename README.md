@@ -2,6 +2,10 @@
 
 Free simple UI sidebar ready to use.
 
+## Demo
+
+[Live preview](https://demo-sidebar-menu-ui.netlify.app)
+
 ## Screenshot
 
 ![react-pro-sidebar](https://demo-sidebar-menu-ui.netlify.app/Screen%20Shot%202023-01-07%20at%2015.26.56.png)

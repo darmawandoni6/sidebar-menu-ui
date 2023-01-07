@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "repository": "https://github.com/darmawandoni6/sidebar-menu.git",
+  "repository": "https://github.com/darmawandoni6/sidebar-menu-ui.git",
   "author": "darmawandoni6 <darmawandoni6@gmail.com>",
   "license": "MIT",
   "private": false,
